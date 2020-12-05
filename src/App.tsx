@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <p className="">
+    <p className="bg-red-500">
       It's {response}
     </p>
   );
