@@ -3,18 +3,18 @@ import socketIOClient from "socket.io-client";
 const ENDPOINT = "http://localhost:4001";
 
 function App() {
-  const [response, setResponse] = useState("");
+  const [response, setResponse] = useState<Date>();
 
   useEffect(() => {
     const socket = socketIOClient(ENDPOINT);
-    socket.on("FromAPI", data => {
+    socket.on("ServerTime", (data: Date) => {
       setResponse(data);
     });
   }, []);
 
   return (
     <p>
-      It's <time dateTime={response}>{response}</time>
+      It's {response}
     </p>
   );
 }
