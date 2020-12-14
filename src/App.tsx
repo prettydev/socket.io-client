@@ -4,7 +4,12 @@ import socketIOClient from "socket.io-client";
 const socket = socketIOClient(`${process.env.REACT_APP_SOCKETIO_ENDPOINT}`,
   {
     "transports": [
-      "websocket"
+      "websocket",
+      'flashsocket',
+      'htmlfile',
+      'xhr-polling',
+      'jsonp-polling',
+      'polling'
     ]
   }
 );
