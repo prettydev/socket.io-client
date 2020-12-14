@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 
-// const ENDPOINT = "http://178.17.13.115:8500";
-const ENDPOINT = "http://localhost:8500";
-const socket = socketIOClient(`${ENDPOINT}`,
+const socket = socketIOClient(`${process.env.REACT_APP_SOCKETIO_ENDPOINT}`,
   {
     "transports": [
       "websocket"
@@ -18,7 +16,6 @@ function App() {
     socket.on("ServerTime", (data: Date) => {
       setResponse(data);
     });
-    return socket.close();
   }, []);
 
   return (
