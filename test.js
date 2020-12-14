@@ -1,4 +1,4 @@
-var socket = require('socket.io-client')('http://localhost:8500');
+var socket = require('socket.io-client')('ws://178.17.13.115:8500');
 const repl = require('repl')
 const chalk = require('chalk');
 socket.on('disconnect', function () {
